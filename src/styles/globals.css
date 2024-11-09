@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... (keep existing animations) ... */
+
+/* Add new animation for theme switch */
+@keyframes spin-once {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card
+{
+  @apply bg-base-200
+}
+
+.animate-spin-once {
+  animation: spin-once 0.6s ease-out forwards;
+}
+
+/* Toast animations */
+.toast {
+  @apply pointer-events-none;
+}
+
+.toast > * {
+  @apply pointer-events-auto;
+}
+
+/* Theme transition */
+* {
+  @apply transition-colors duration-200;
+}
